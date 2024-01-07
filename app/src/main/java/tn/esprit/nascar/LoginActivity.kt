@@ -93,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
             binding.tiEmailLayout.isErrorEnabled = false
         }
 
-        if (Patterns.EMAIL_ADDRESS.matcher(binding.tiEmail.text.toString()).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(binding.tiEmail.text.toString()).matches()) {
             binding.tiEmailLayout.error = getString(R.string.msg_check_your_email)
             binding.tiEmail.requestFocus()
             return false
